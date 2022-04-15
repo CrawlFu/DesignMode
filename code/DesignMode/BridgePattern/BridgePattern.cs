@@ -27,9 +27,41 @@ namespace BridgePattern
         }
     }
 
+    public class ConcreteRemote : RemoteControl
+    {
+        public override void Off()
+        {
+            Console.WriteLine("---------------------");
+            base.Off();
+            Console.WriteLine("---------------------");
+        }
+    }
+
     public abstract class TV
     {
-        public virtual void On();
-        public virtual void Off();
+        public abstract void On();
+        public abstract void Off();
+
+        public virtual void test()
+        { 
+        }
+    }
+
+    public class XiaoMi : TV
+    {
+        public override void test()
+        {
+            base.test();
+        }
+
+        public override void On()
+        {
+            Console.WriteLine("xiao mi on");
+        }
+
+        public override void Off()
+        {
+            Console.WriteLine("xiao mi off");
+        }
     }
 }
